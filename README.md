@@ -5,7 +5,6 @@ An autonomous, multi-tool research assistant powered by LangGraph agent orchestr
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![LangGraph](https://img.shields.io/badge/LangGraph-0.2%2B-green)
 ![LangChain](https://img.shields.io/badge/LangChain-0.3%2B-orange)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
