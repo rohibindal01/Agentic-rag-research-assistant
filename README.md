@@ -134,6 +134,7 @@ streamlit run src/ui/app.py
 |---|---|
 | `GROQ_API_KEY` | Groq API key — free tier at [console.groq.com](https://console.groq.com) |
 | `LANGCHAIN_API_KEY` | LangSmith API key for tracing |
+|LANGCHAIN_TRACING_V2=true |
 | `LANGCHAIN_PROJECT` | LangSmith project name |
 | `TAVILY_API_KEY` | Tavily web search API key |
 | `PINECONE_API_KEY` | Pinecone API key (optional; defaults to local FAISS) |
