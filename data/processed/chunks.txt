@@ -1,0 +1,1058 @@
+--- Chunk 0 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 0, 'page_label': '1'} ---
+1  
+Data Visualization - Matplotlib 
+ 
+ 
+ 
+Data Visualization 
+ 
+We, as humans, process visual information faster than text or numbers, so we use Data 
+visualization i.e. the graphical representation of data to: 
+ 
+• Understand patterns and trends 
+• Identify outliers and anomalies 
+• Communicate insights clearly 
+• Support data-driven decision making 
+ 
+The common types of plots used in data visualization are line plots, bar charts, histograms, 
+scatter plots, box plots etc. 
+ 
+ 
+ 
+Matplotlib 
+ 
+Matplotlib is a Python library used for: 
+ 
+• Creating static, animated, and interactive plots 
+• Low-level control over plot appearance 
+• Serving as the foundation for other libraries (Seaborn, Pandas plotting) 
+ 
+ 
+Installation 
+ 
+ 
+ 
+ 
+Usage 
+ 
+ 
+ 
+ 
+ 
+pip install matplotlib 
+ 
+import matplotlib.pyplot as plt 
+rohibindal@gmail.com
+
+--- Chunk 1 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 1, 'page_label': '2'} ---
+2  
+'*' 
+ '.' 
+- 
+ 
+ o 
+ 
+: 
+ 
+ s 
+ 
+^ 
+ 
+Basic Plot Structure 
+ 
+ 
+ 
+ 
+ 
+Important Plots in Matplotlib 
+ 
+ 
+Line Plots 
+ 
+A line plot is a type of chart used to display data points connected by straight lines, 
+typically to show trends or changes over a continuous variable, such as time or distance. 
+ 
+ 
+Example: 
+ 
+ 
+ 
+Key features of a line plot: 
+ 
+• X-axis: usually continuous (time, sequence, measurements) 
+• Y-axis: values being measured 
+• Line style: solid (), dashed (    ), dotted (    ) etc. 
+• Markers: shows individual data points (    ,    ,    ,        ,   ) 
+ 
+  
+ 
+plt.plot(x, y)  
+plt.xlabel("X-axis label") 
+plt.ylabel("Y-axis label")  
+plt.title("Title")  
+plt.show() 
+ 
+import matplotlib.pyplot as plt  
+ 
+x = [1, 2, 3, 4, 5]  
+y = [2, 4, 6, 8, 10]  
+ 
+plt.plot(x, y)  
+plt.xlabel("X values")  
+plt.ylabel("Y values")  
+plt.title("Simple Line Plot")  
+plt.grid(True) # Adds a grid  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 2 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 2, 'page_label': '3'} ---
+3  
+Styling a Line Plot 
+ 
+ 
+ 
+ 
+Multiple Lines on the Same Plot 
+ 
+ 
+ 
+ 
+Saving Plots 
+ 
+ 
+ 
+ 
+When to use? 
+ 
+Use a line plot when: 
+ 
+• Data points are ordered 
+• You want to show progression or trends 
+• You’re comparing changes rather than individual categories 
+ 
+plt.plot(x, y,  
+  color="blue",  
+  linestyle="--",  
+  linewidth=2,  
+  marker="o",  
+  markersize=6)  
+ 
+plt.show() 
+ 
+y2 = [1, 3, 5, 7, 9]  
+ 
+plt.plot(x, y, label="Line 1")  
+plt.plot(x, y2, label="Line 2")  
+ 
+plt.xlabel("X")  
+plt.ylabel("Y")  
+plt.legend()  
+plt.show() 
+ 
+plt.savefig("line_plot.png") 
+rohibindal@gmail.com
+
+--- Chunk 3 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 3, 'page_label': '4'} ---
+4  
+fmt 
+fmt 
+[color][marker][linestyle] 
+ 
+ 
+ 
+ 
+ 
+Bar Charts 
+ 
+A bar chart is a graph that displays categorical data using rectangular bars. Each bar’s 
+height (or length, in horizontal bars) represents a value. 
+ 
+Example: 
+ 
+ 
+ 
+This creates a vertical bar chart (most common). 
+ 
+ 
+  
+ 
+In Matplotlib,        strings are a compact way to specify the line style,  
+marker, and color in a single string, so      is a combination of  
+                                           . 
+ 
+Example: 
+ 
+plt.plot(x, y, 'g--')  # green dashed line  
+plt.plot(x, y, 'bo')  # blue circles, no line 
+ 
+ 
+Refer to documentation for all options - 
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html 
+ 
+import matplotlib.pyplot as plt  
+ 
+x = ['A', 'B', 'C', 'D']  
+y = [10, 15, 7, 12]  
+ 
+plt.bar(x, y)  
+plt.xlabel("Categories")  
+plt.ylabel("Values")  
+plt.title("Simple Bar Chart")  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 4 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 4, 'page_label': '5'} ---
+5  
+Styling a Bar Chart 
+ 
+ 
+ 
+ 
+Horizontal Bar Chart 
+ 
+ 
+ 
+ 
+Multiple Bar Charts (Grouped Bars) 
+ 
+ 
+ 
+ 
+When to use? 
+ 
+Use a bar chart when: 
+• You are comparing different categories 
+• The data is discrete, not continuous 
+• You want clear visual comparison 
+ 
+plt.bar(x, y,  
+ color='skyblue',  
+ width=0.6,  
+ edgecolor='black',  
+ linewidth=1.5)  
+ 
+plt.text()  
+plt.show() 
+ 
+plt.barh(x, y)  
+plt.xlabel("Values")  
+plt.ylabel("Categories")  
+plt.title("Horizontal Bar Chart")  
+plt.show() 
+ 
+import numpy as np  
+ 
+x = np.arange(4)  
+y1 = [10, 15, 7, 12]  
+y2 = [8, 14, 9, 10]  
+ 
+width = 0.35  
+ 
+plt.bar(x - width/2, y1, width, label='Group 1')  
+plt.bar(x + width/2, y2, width, label='Group 2')  
+ 
+plt.xticks(x, ['A', 'B', 'C', 'D'])  
+plt.xlabel("Categories")  
+plt.ylabel("Values")  
+plt.legend()  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 5 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 5, 'page_label': '6'} ---
+6  
+plt.text() 
+ 
+ 
+ 
+ 
+Scatter Plots 
+ 
+A scatter plot shows the relationship between two variables by plotting points on a 2D 
+plane.  
+ 
+Example: 
+ 
+ 
+ 
+ 
+ 
+Styling a Bar Chart 
+ 
+ 
+ 
+We can use          to add text annotations to the bars in the bar chart. 
+ 
+Syntax: 
+  
+ 
+values = [10, 20, 30]  
+plt.bar(['A', 'B', 'C'], values)  
+ 
+for i, v in enumerate(values):  
+plt.text(i, v, str(v)) 
+ 
+ 
+ 
+ 
+x = [1, 2, 3, 4, 5]  
+y = [2, 4, 1, 3, 5]  
+ 
+plt.scatter(x, y)  
+plt.xlabel("X values")  
+plt.ylabel("Y values")  
+plt.title("Simple Scatter Plot")  
+plt.grid(True)  
+plt.show() 
+ 
+plt.scatter(x, y,  
+  s=100,   # marker size  
+  c='red',   # color  
+  marker='o',  
+  alpha= 0.7)  # transparency  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 6 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 6, 'page_label': '7'} ---
+7  
+Using a Colormap (Color by Value) 
+ 
+ 
+ 
+ 
+Multiple Scatter Plots 
+ 
+ 
+ 
+ 
+When to use? 
+ 
+Use a scatter plot when: 
+• You want to analyze the relationship between two variables 
+• Data is numerical and continuous 
+• You don’t want to imply a trend by connecting points 
+ 
+ 
+import numpy as np  
+ 
+colors = np.array([10, 20, 30, 40, 50])  
+ 
+plt.scatter(x, y, c=colors, cmap='viridis')  
+plt.colorbar(label='Color Scale')  
+plt.show() 
+ 
+y2 = [5, 3, 4, 2, 1]  
+ 
+plt.scatter(x, y, label='Set 1')  
+plt.scatter(x, y2, label='Set 2')  
+ 
+plt.xlabel("X")  
+plt.ylabel("Y")  
+plt.legend()  
+plt.show() 
+ 
+We can also add annotations. Annotations are used to add explanatory 
+text or markers to specific points in a plot. 
+ 
+Example: 
+ 
+x = [1, 2, 3, 4, 5]  
+y = [5, 7, 6, 8, 7]  
+ 
+plt.scatter(x, y)  
+ 
+# Annotate each point  
+for i in range(len(x)):  
+ plt.text(x[i]+0.1, y[i]+0.1, f"({x[i]}, {y[i]})") # small offset 
+ 
+ 
+rohibindal@gmail.com
+
+--- Chunk 7 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 7, 'page_label': '8'} ---
+8  
+Pie Charts 
+ 
+A pie chart is a circular chart divided into slices to show relative proportions of a whole. 
+ 
+• Each slice = a category 
+• Size of slice = value of that category relative to the total  
+ 
+We prefer them only when our data has few categories. 
+ 
+Example: 
+ 
+ 
+ 
+ 
+Adding Percentages 
+ 
+ 
+ 
+ 
+Changing Colors 
+ 
+ 
+ 
+ 
+Starting Angle and Shadow 
+ 
+ 
+ 
+sizes = [30, 20, 25, 25]  
+labels = ['A', 'B', 'C', 'D']  
+ 
+plt.pie(sizes, labels=labels)  
+plt.show() 
+ 
+plt.pie(sizes,  
+ labels=labels,  
+ autopct='%1.1f%%') # shows percentage  
+ 
+plt.show() 
+ 
+colors = ['skyblue', 'lightgreen', 'pink', 'orange']  
+ 
+plt.pie(sizes, labels=labels, autopct='%1.1f%%', colors=colors)  
+plt.show() 
+ 
+plt.pie(sizes,  
+ labels=labels,  
+ autopct='%1.1f%%',  
+ startangle=90,  # rotate chart  
+ shadow=True)  # adds shadow  
+ 
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 8 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 8, 'page_label': '9'} ---
+9  
+wedgeprops 
+Wedgeprops 
+ 
+In Matplotlib pie charts,            is a dictionary of properties that controls the 
+appearance of the pie slices (wedges). It has common properties like edgecolor, 
+linewidth, linestyle, alpha etc. 
+ 
+ 
+ 
+ 
+When to use? 
+ 
+Use a pie chart when: 
+• You want to display part-to-whole relationships 
+• You have categorical data 
+• Data has few categories (4–6); too many slices make it hard to read 
+ 
+ 
+ 
+Histograms 
+ 
+A histogram shows the distribution of numerical data by: 
+• Dividing values into bins (ranges) 
+• Counting how many values fall into each bin (frequency)  
+ 
+ 
+Example: 
+ 
+ 
+ 
+ 
+plt.pie(sizes,  
+ labels=labels,  
+ autopct='%1.1f%%',  
+ wedgeprops={'edgecolor': 'black', 'linewidth': 2}) 
+ 
+data = [1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5]  
+ 
+plt.hist(data, bins=5, color='skyblue', edgecolor='black')  
+ 
+plt.xlabel("Value")  
+plt.ylabel("Frequency")  
+plt.title("Simple Histogram")  
+plt.grid(axis='y', linestyle='--', alpha=0. 7)  
+ 
+plt.show()
+
+--- Chunk 9 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 8, 'page_label': '9'} ---
+plt.xlabel("Value")  
+plt.ylabel("Frequency")  
+plt.title("Simple Histogram")  
+plt.grid(axis='y', linestyle='--', alpha=0. 7)  
+ 
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 10 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 9, 'page_label': '10'} ---
+10  
+Number of bins 
+ 
+          controls how the data is divided. It can be an integer or a sequence of bin edges: 
+ 
+ 
+ 
+ 
+Histogram Orientation 
+ 
+ 
+• Vertical (default) 
+ 
+ 
+ 
+ 
+• Horizontal 
+ 
+ 
+ 
+ 
+Multiple Histograms 
+ 
+ 
+ 
+           controls transparency so overlapping histograms are visible. 
+ 
+ 
+When to use? 
+ 
+Use a histogram when: 
+• You want to show the distribution of continuous data. 
+• You have to analyze frequency, spread, skewness, or patterns. 
+• Working with large datasets to summarize trends. 
+ 
+ 
+plt.hist(data, bins=3) # integer  
+ 
+plt.hist(data, bins=[1, 2, 3, 4, 5, 6]) # sequence 
+ 
+plt.hist(data) 
+ 
+plt.hist(data, orientation='horizontal') 
+ 
+data2 = [2, 3, 3, 4, 4, 5, 5, 5, 6]  
+ 
+plt.hist(data, bins=5, alpha=0.5, label='Data 1', color='blue') 
+plt.hist(data2, bins=5, alpha=0.5, label='Data 2', color='red') 
+plt.legend() 
+bins 
+alpha 
+rohibindal@gmail.com
+
+--- Chunk 11 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 10, 'page_label': '11'} ---
+11  
+ 
+ 
+ 
+ 
+Box Plots 
+ 
+A box plot is a statistical visualization that summarizes the distribution of a dataset using 
+five key numbers: 
+ 
+• Minimum (lowest non-outlier) 
+• First Quartile (Q1) – 25th percentile 
+• Median (Q2) – 50th percentile 
+• Third Quartile (Q3) – 75th percentile 
+• Maximum (highest non-outlier)  
+ 
+It can also show outliers.  
+ 
+Example: 
+ 
+ 
+ 
+ 
+Main Values in the Box Plot 
+ 
+1. Minimum (Lower Whisker) 
+• The smallest data point within 1.5 × IQR below Q1 
+• Any smaller points are considered outliers 
+ 
+ 
+2. First Quartile (Q1) 
+• The 25th percentile of the data 
+• 25% of data points are below Q1 
+• Bottom edge of the box 
+ 
+              (Axis Vertical Line) is used to draw a vertical line at a specific x- 
+value in a plot. 
+ 
+Example: 
+ 
+plt.axvline(x=value, color='color', linestyle='style', linewidth=width, 
+label='label') 
+ 
+ 
+ 
+data = [7, 8, 5, 6, 9, 7, 8, 10, 4, 6]  
+ 
+plt.boxplot(data)  
+plt.ylabel("Values")  
+plt.title("Simple Box Plot")  
+plt.show()
+
+--- Chunk 12 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 10, 'page_label': '11'} ---
+label='label') 
+ 
+ 
+ 
+data = [7, 8, 5, 6, 9, 7, 8, 10, 4, 6]  
+ 
+plt.boxplot(data)  
+plt.ylabel("Values")  
+plt.title("Simple Box Plot")  
+plt.show() 
+axvline 
+rohibindal@gmail.com
+
+--- Chunk 13 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 11, 'page_label': '12'} ---
+12  
+3. Median (Q2) 
+• The 50th percentile (middle value) 
+• Line inside the box 
+• Splits the dataset into two halves 
+ 
+ 
+4. Third Quartile (Q3) 
+• The 75th percentile of the data 
+• 75% of data points are below Q3 
+• Top edge of the box 
+ 
+ 
+5. Maximum (Upper Whisker) 
+• The largest data point within 1.5 × IQR above Q3 
+• Points beyond this are outliers 
+ 
+ 
+6. Interquartile Range (IQR) 
+• Difference between Q3 and Q1: IQR = Q3 − Q1 
+• Represents the middle 50% of the data 
+ 
+ 
+7. Outliers 
+• Data points outside 1.5 × IQR from Q1 or Q3 
+• Plotted as dots or asterisks beyond the whiskers 
+ 
+ 
+Horizontal Box Plot 
+ 
+ 
+ 
+ 
+Multiple Box Plots 
+ 
+ 
+ 
+Each box represents a different dataset. 
+ 
+plt.boxplot(data, vert=False)  
+plt.xlabel("Values")  
+plt.show() 
+ 
+data1 = [7, 8, 5, 6, 9, 7, 8, 10, 4, 6]  
+data2 = [5, 6, 7, 8, 5, 4, 6, 7, 5, 6]  
+ 
+plt.boxplot([data1, data2], labels=['Dataset 1', 'Dataset 2'])  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 14 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 12, 'page_label': '13'} ---
+13  
+showmeans=True 
+meanline=True 
+Showing Mean 
+ 
+ 
+ 
+•     adds the mean marker. 
+•   draws a line instead of a point. 
+ 
+ 
+When to use? 
+ 
+• Visualize spread and skewness of data 
+• Identify outliers 
+• Compare distributions across multiple groups 
+ 
+ 
+ 
+Stack Plots 
+ 
+A stack plot is a type of plot where multiple data series are stacked on top of each other. 
+Each “layer” shows the contribution of one category, and the top line shows the 
+cumulative total. 
+ 
+Example: 
+ 
+ 
+ 
+ 
+When to use? 
+ 
+Use a stack plot when you want to: 
+• Show cumulative data over time 
+• Compare multiple components 
+• Highlight trends in parts and whole 
+ 
+plt.boxplot(data, showmeans=True, meanline=True) 
+ 
+x = [1, 2, 3, 4, 5]  
+y1 = [1, 2, 3, 4, 5]  
+y2 = [2, 1, 2, 1, 2]  
+ 
+plt.stackplot(x, y1, y2, labels=['Data1', 'Data2'], colors=['blue', 'green']) 
+ 
+plt.xlabel("X")  
+plt.ylabel("Y")  
+plt.title("Basic Stack Plot")  
+plt.legend(loc='upper left')  
+ 
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 15 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 13, 'page_label': '14'} ---
+14  
+plt.subplot(nrows, ncols, index) 
+plt 
+Subplots 
+ 
+In Matplotlib, subplots allow you to display multiple plots in a single figure, arranged 
+in a grid. This is useful for comparing different datasets or visualizations side by side. 
+ 
+Example: 
+  
+ 
+ 
+• selects the current axes. 
+• Index counts row-wise from top-left to bottom-right (Row major). 
+ 
+ 
+ 
+Modern Matplotlib 
+ 
+Modern Matplotlib with the Object-Oriented (OO) approach is now the recommended 
+way to create professional plots. 
+ 
+Why Use OO Style? 
+ 
+• More control over multiple axes, subplots, and figures 
+• Cleaner and more readable for complex plots 
+• Avoids side effects of      (state-based interface) 
+• Easier to combine multiple plot types 
+ 
+x = [1, 2, 3, 4, 5]  
+y1 = [2, 3, 5, 7, 11]  
+y2 = [1, 4, 2, 5, 3]  
+ 
+# 1 row, 2 columns, first subplot  
+plt.subplot(1, 2, 1) # (rows, columns, index)  
+plt.plot(x, y1, color='blue', marker='o')  
+plt.title("First Subplot")  
+plt.xlabel ("X")  
+plt.ylabel("Y1")
+
+--- Chunk 16 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 13, 'page_label': '14'} ---
+# 1 row, 2 columns, first subplot  
+plt.subplot(1, 2, 1) # (rows, columns, index)  
+plt.plot(x, y1, color='blue', marker='o')  
+plt.title("First Subplot")  
+plt.xlabel ("X")  
+plt.ylabel("Y1")  
+ 
+# 1 row, 2 columns, second subplot  
+plt.subplot(1, 2, 2)  
+plt.plot(x, y2, color='red', marker='s')  
+plt.title("Second Subplot")  
+plt.xlabel("X")  
+plt.ylabel("Y2") 
+  
+plt.tight_layout()  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 17 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 14, 'page_label': '15'} ---
+15  
+fig 
+ ax 
+fig 
+ax 
+Basic Plot 
+ 
+ 
+ 
+ 
+        and       are core objects that give you full control over our plots. 
+ 
+•         is Figure & it represents the entire figure or canvas. 
+•       is Axes & it represents a single plot or graph within the figure. 
+ 
+Subplots 
+ 
+ 
+ 
+|   Keep Learning & Keep Exploring! 
+ 
+x = [1, 2, 3, 4, 5]  
+y = [2, 3, 5, 7, 11]  
+ 
+# Create figure and axes  
+fig, ax= plt.subplots()  
+ 
+# Plot data  
+ax.plot(x, y, label="Prime numbers", color='blue', linestyle='--', marker='o') 
+ 
+# Add labels and title  
+ax.set_xlabel("X axis")  
+ax.set_ylabel("Y axis")  
+ax.set_title("OO Line Plot Example")  
+ 
+# Add legend and grid  
+ax.legend()  
+ax.grid(True) 
+ 
+plt.show() 
+ 
+fig, axs = plt.subplots(2, 2, figsize=(8, 6))  
+ 
+axs[0, 0].plot(x, y1)  
+axs[0, 0].set_title("Top Left")  
+ 
+axs[0, 1].bar(['A','B','C'], [3,5,2])  
+axs[0, 1].set_title("Top Right")  
+ 
+axs[1, 0].scatter(x, y2)  
+axs[1, 0].set_title("Bottom Left")  
+ 
+axs[1, 1].hist([1,2,2,3,3,3,4])
+
+--- Chunk 18 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T09:57:27+00:00', 'moddate': '2026-05-04T09:57:27+00:00', 'title': 'Data Visualization - Matplotlib', 'source': 'Data Visualization - Matplotlib.pdf', 'total_pages': 15, 'page': 14, 'page_label': '15'} ---
+axs[0, 1].bar(['A','B','C'], [3,5,2])  
+axs[0, 1].set_title("Top Right")  
+ 
+axs[1, 0].scatter(x, y2)  
+axs[1, 0].set_title("Bottom Left")  
+ 
+axs[1, 1].hist([1,2,2,3,3,3,4])  
+axs[1, 1].set_title("Bottom Right")  
+ 
+plt.tight_layout()  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 19 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T10:16:06+00:00', 'moddate': '2026-05-04T10:16:06+00:00', 'title': 'Data Visualization - Seaborn', 'source': 'Data Visualization - Seaborn.pdf', 'total_pages': 4, 'page': 0, 'page_label': '1'} ---
+1  
+boxplot 
+ violinplot 
+ heatmap 
+hue 
+style 
+size 
+Data Visualization – Seaborn 
+ 
+ 
+Seaborn 
+ 
+Seaborn is a high-level Python data visualization library built on top of Matplotlib . 
+It provides a simpler and more attractive way to create statistical graphics, with default 
+themes and color palettes that look modern and clean. 
+ 
+ 
+Key Features 
+ 
+1. Integration with Pandas – Works seamlessly with DataFrames and handles column 
+names directly. 
+2. Complex plots made easy – Automatically handles things like regression lines, 
+aggregation, and confidence intervals. 
+3. Statistical plotting – Supports visualization of distributions, relationships, and 
+categorical data (e.g.,               ,                     ,      ). 
+4. Beautiful default styles & in-built datasets for learning. 
+ 
+ 
+Usage 
+ 
+ 
+ 
+• - color by category 
+•    - marker style by category 
+•   - size of points by a variable 
+ 
+ 
+Why Use Seaborn 
+• Saves time with prettier defaults than Matplotlib.
+
+--- Chunk 20 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T10:16:06+00:00', 'moddate': '2026-05-04T10:16:06+00:00', 'title': 'Data Visualization - Seaborn', 'source': 'Data Visualization - Seaborn.pdf', 'total_pages': 4, 'page': 0, 'page_label': '1'} ---
+Usage 
+ 
+ 
+ 
+• - color by category 
+•    - marker style by category 
+•   - size of points by a variable 
+ 
+ 
+Why Use Seaborn 
+• Saves time with prettier defaults than Matplotlib.  
+• Great for exploratory data analysis (EDA). 
+• Works well with complex datasets and statistical visualizations. 
+ 
+import seaborn as sns  
+import matplotlib.pyplot as plt  
+ 
+# Load example dataset  
+tips = sns.load_dataset("tips")  
+ 
+# Scatter plot of total bill vs tip  
+sns.scatterplot(data=tips, x="total_bill", y="tip", hue="day", style="sex", size="size") 
+plt.title("Tips Scatter Plot")  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 21 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T10:16:06+00:00', 'moddate': '2026-05-04T10:16:06+00:00', 'title': 'Data Visualization - Seaborn', 'source': 'Data Visualization - Seaborn.pdf', 'total_pages': 4, 'page': 1, 'page_label': '2'} ---
+2  
+ci 
+Common Plots with Seaborn 
+ 
+ 
+Relational Plots 
+ 
+Relational plots are plots that show the relationship between two (or more) variables, 
+typically numerical x and y variables. 
+ 
+Line Plots 
+ 
+ 
+ 
+We can also use   i.e. Confidence Interval. 
+ 
+ 
+Scatter Plots 
+ 
+ 
+ 
+ 
+ 
+Categorical Plots 
+ 
+Categorical plots are used to visualize data where one variable is categorical (discrete) 
+and the other is usually numerical. 
+ 
+Bar Plots 
+ 
+ 
+ 
+# Example dataset  
+data = sns.load_dataset("tips")  
+ 
+# Line plot: average tip by total bill  
+sns.lineplot(data=data, x="total_bill", y="tip")  
+plt.title ("Line Plot: Total Bill vs Tip")  
+plt.show() 
+ 
+# Scatter plot  
+sns.scatterplot(data=data, x="total_bill", y="tip")  
+plt.title("Scatter Plot: Total Bill vs Tip")  
+plt.show() 
+ 
+tips = sns.load_dataset("tips")  
+sns.barplot(data=tips, x="day", y="total_bill", hue="sex") 
+plt.title("Average Total Bill per Day by Sex")  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 22 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T10:16:06+00:00', 'moddate': '2026-05-04T10:16:06+00:00', 'title': 'Data Visualization - Seaborn', 'source': 'Data Visualization - Seaborn.pdf', 'total_pages': 4, 'page': 2, 'page_label': '3'} ---
+3  
+fig 
+ ax 
+ 
+Box Plots 
+ 
+ 
+ 
+ 
+ 
+Distribution Plots 
+ 
+Distribution plots are used to visualize the distribution of a single numerical variable.  
+ 
+Histograms 
+ 
+ 
+ 
+ 
+Matrix Plots 
+ 
+Matrix plots are used to visualize 2D data arranged in a matrix or table, such as 
+correlation matrices, confusion matrices, or pivot tables. 
+ 
+Heatmap 
+ 
+ 
+ 
+ 
+Best Practices 
+ 
+1. When working with data visualization we use Seaborn for High-Level Plots and 
+Matplotlib for Low-Level Customizations. 
+2. We work with    and       objects for modular and reusable code. 
+ 
+sns.boxplot(data=tips, x="day", y="total_bill", hue="sex")  
+plt.title("Box Plot of Total Bill by Day and Sex")  
+plt.show() 
+ 
+tips = sns.load_dataset("tips")  
+sns.histplot(data=tips, x="total_bill", bins=10, kde=False) 
+plt.title("Histogram of Total Bill")  
+plt.show() 
+ 
+# Example: correlation matrix of tips dataset  
+tips = sns.load_dataset("tips")  
+corr = tips.corr() # correlation between numerical columns
+
+--- Chunk 23 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T10:16:06+00:00', 'moddate': '2026-05-04T10:16:06+00:00', 'title': 'Data Visualization - Seaborn', 'source': 'Data Visualization - Seaborn.pdf', 'total_pages': 4, 'page': 2, 'page_label': '3'} ---
+plt.title("Histogram of Total Bill")  
+plt.show() 
+ 
+# Example: correlation matrix of tips dataset  
+tips = sns.load_dataset("tips")  
+corr = tips.corr() # correlation between numerical columns  
+ 
+sns.heatmap (corr, annot=True, cmap="coolwarm")  
+plt.title("Correlation Heatmap")  
+plt.show() 
+rohibindal@gmail.com
+
+--- Chunk 24 | {'producer': 'pdfcpu v0.9.1 dev', 'creator': 'Microsoft® Word LTSC', 'creationdate': '2026-05-04T10:16:06+00:00', 'moddate': '2026-05-04T10:16:06+00:00', 'title': 'Data Visualization - Seaborn', 'source': 'Data Visualization - Seaborn.pdf', 'total_pages': 4, 'page': 3, 'page_label': '4'} ---
+4  
+Creating Simple Plot 
+ 
+ 
+ 
+ 
+Using Subplots 
+ 
+ 
+ 
+ 
+ 
+|   Keep Learning & Keep Exploring! 
+ 
+import matplotlib.pyplot as plt  
+import seaborn as sns  
+ 
+fig, ax = plt.subplots(figsize=(7,5)) 
+ 
+sns.scatterplot(data=sns.load_dataset("tips"), x="total_ bill", y="tip", hue="day", ax=ax)  
+sns.set_style("whitegrid") # options: white, dark, whitegrid, ticks 
+ 
+ax.set_title("Scatter Plot with Seaborn and Matplotlib")  
+plt.show() 
+ 
+fig, ax = plt.subplots()  
+ 
+sns.boxplot(data=sns.load_dataset("tips"), x="day", y="total_bill", hue="sex", ax=ax)  
+ 
+ax.set_title("Boxplot: Total Bill by Day and Sex")  
+ax.set_xlabel("Day of the Week")  
+ax.set_ylabel("Total Bill ($)")  
+plt.legend(title="Sex")  
+ 
+plt.show() 
+rohibindal@gmail.com
+

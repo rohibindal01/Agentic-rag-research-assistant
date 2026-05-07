@@ -1,0 +1,25 @@
+llm:
+  provider: "groq"
+  model: "llama-3.3-70b-versatile"
+  temperature: 0.0
+
+embeddings:
+  provider: "huggingface"            # "huggingface" (free, local) or "openai"
+  model: "sentence-transformers/all-MiniLM-L6-v2"  # fast & good quality; swap to "BAAI/bge-small-en-v1.5" for better accuracy
+
+chunking:
+  chunk_size: 1000
+  chunk_overlap: 200
+
+vectorstore:
+  provider: "faiss"                       # "faiss" or "pinecone"
+  faiss_index_path: "data/vectorstore/faiss_index"
+  pinecone_index_name: "rag-research"     # only used if provider = pinecone
+
+agent:
+  max_iterations: 3
+  confidence_threshold: 0.75
+
+langsmith:
+  tracing: true
+  project: "agentic-rag-research-assistant"
