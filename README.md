@@ -117,18 +117,12 @@ source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Configure environment variables
-```bash
-cp .env.example .env
-# Fill in your API keys in .env
-```
-
-### 5. Ingest your PDFs
+### 4. Ingest your PDFs
 ```bash
 python -m src.retrieval.ingest --input_dir data/raw/ --output_dir data/processed/
 ```
 
-### 6. Run the Streamlit app
+### 5. Run the Streamlit app
 ```bash
 streamlit run src/ui/app.py
 ```
@@ -207,15 +201,4 @@ pytest tests/ -v --tb=short
 - [ ] Docker containerization
 - [ ] REST API endpoint (FastAPI)
 
----
 
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
-## 👤 Author
-
-**Rohi Bindal**
-[LinkedIn](https://linkedin.com/in/rohibindal1701) · [GitHub](https://github.com/rohibindal01)
