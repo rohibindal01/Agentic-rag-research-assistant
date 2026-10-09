@@ -185,20 +185,4 @@ Traces capture:
 pytest tests/ -v --tb=short
 ```
 
----
-
-## 🗺️ Roadmap
-
-- [x] PDF ingestion pipeline with recursive text splitting
-- [x] FAISS vector store with persistence
-- [x] LangGraph ReAct agent with 3 tools
-- [x] Reflexion self-critique loop
-- [x] LangSmith tracing integration
-- [x] RAGAS evaluation pipeline
-- [x] Streamlit UI with source citations
-- [ ] Pinecone cloud vector store support
-- [ ] Multi-document cross-reference graph (knowledge graph)
-- [ ] Docker containerization
-- [ ] REST API endpoint (FastAPI)
-
 
