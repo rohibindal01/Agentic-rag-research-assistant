@@ -156,12 +156,12 @@ streamlit run src/ui/app.py
 
 Evaluated using [RAGAS](https://github.com/explodinggradients/ragas) on a curated Q&A test set:
 
-| Metric | Score |
-|---|---|
-| Faithfulness | — |
-| Answer Relevance | — |
-| Context Precision | — |
-| Context Recall | — |
+| Metric |
+|---|
+| Faithfulness |
+| Answer Relevance |
+| Context Precision | 
+| Context Recall | 
 
 > Scores will be populated after running `python -m src.evaluation.ragas_eval`
 
