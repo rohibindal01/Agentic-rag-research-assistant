@@ -1,4 +1,4 @@
-# 🤖 Agentic RAG Research Assistant
+# Agentic RAG Research Assistant
 
 An autonomous, multi-tool research assistant powered by LangGraph agent orchestration, Retrieval-Augmented Generation (RAG), and LangSmith observability. Designed to ingest academic PDFs, answer domain-specific questions with cited sources, and self-correct via a ReAct-style agent loop.
 
